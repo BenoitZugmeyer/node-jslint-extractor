@@ -1,43 +1,45 @@
 {
-    "name": "jslint",
-    "description": "The JavaScript Code Quality Tool",
-    "homepage": "https://github.com/reid/node-jslint",
-    "keywords": [
-        "lint"
-    ],
-    "version": "0.1.8",
-    "author" : "Reid Burke <me@reidburke.com>",
-    "contributors": [
-        "Douglas Crockford <douglas@crockford.com>",
-        "Mikeal Rogers <mikeal.rogers@gmail.com>",
-        "Adam Moore",
-        "Luke Smith <lsmith@yahoo-inc.com>",
-        "Anders Conbere <aconbere@gmail.com>"
-    ],
-    "bin": {
-        "jslint": "./bin/jslint.js"
-    },
-    "main": "./lib/jslint.js",
-    "dependencies": {
-        "nopt": "~1.0.0"
-    },
-    "engines": {
-        "node": ">=0.4.12"
-    },
-    "directories": {
-        "lib": "./lib"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/reid/node-jslint.git"
-    },
-    "bugs": {
-        "url": "https://github.com/reid/node-jslint/issues"
-    },
-    "licenses": [
-        {
-            "type": "Modified MIT / BSD",
-            "url": "https://github.com/reid/node-jslint/blob/master/LICENSE"
-        }
-    ]
+  "name": "jslint-extractor",
+  "description": "A fork of node-jslint with an option to extract JS from HTML",
+  "homepage": "https://github.com/BenoitZugmeyer/node-jslint-extractor",
+  "keywords": [
+    "lint extract"
+  ],
+  "version": "0.0.1",
+  "author": "Benoît Zugmeyer <benoit@zugmeyer.com>",
+  "contributors": [
+    "Reid Burke <me@reidburke.com>",
+    "Douglas Crockford <douglas@crockford.com>",
+    "Mikeal Rogers <mikeal.rogers@gmail.com>",
+    "Adam Moore",
+    "Luke Smith <lsmith@yahoo-inc.com>",
+    "Anders Conbere <aconbere@gmail.com>"
+  ],
+  "bin": {
+    "jslint": "./bin/jslint.js"
+  },
+  "main": "./lib/jslint.js",
+  "dependencies": {
+    "nopt": "~1.0.0",
+    "htmlparser2": "~2.2.9"
+  },
+  "engines": {
+    "node": ">=0.4.12"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/BenoitZugmeyer/node-jslint-extractor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BenoitZugmeyer/node-jslint-extractor/issues"
+  },
+  "licenses": [
+    {
+      "type": "Modified MIT / BSD",
+      "url": "https://github.com/BenoitZugmeyer/node-jslint-extractor/blob/master/LICENSE"
+    }
+  ]
 }
