@@ -7,15 +7,9 @@ Use the `--extractjs auto|always|never` to do it.
 
     jslint --extractjs always index.html
 
-## node-jslint
-
-Easily use [JSLint][] from the command line.
-
-    jslint app.js
-
 ## Install
 
-    npm install jslint
+    npm install git://github.com/BenoitZugmeyer/node-jslint-extractor.git
 
 ## Self-Lint
 
