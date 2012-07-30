@@ -1,3 +1,12 @@
+## node-jslint-extractor
+
+This is a fork of [node-jslint][] aimed to ease JSLint validation of JavaScript source code
+embedded in html files.
+
+Use the `--extractjs auto|always|never` to do it.
+
+    jslint --extractjs always index.html
+
 ## node-jslint
 
 Easily use [JSLint][] from the command line.
@@ -39,4 +48,5 @@ JSLint your entire project
 
 See LICENSE file.
 
+[node-jslint]: https://github.com/reid/node-jslint
 [JSLint]: http://jslint.com/
