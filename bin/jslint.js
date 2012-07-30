@@ -2,6 +2,7 @@
 
 var linter = require("../lib/linter");
 var reporter = require("../lib/reporter");
+var extractjs = require("../lib/extractjs");
 var nopt = require("nopt");
 var fs = require("fs");
 
@@ -19,7 +20,8 @@ function commandOptions() {
             'indent' : Number,
             'maxerr' : Number,
             'maxlen' : Number,
-            'predef' : [String, Array]
+            'predef' : [String, Array],
+            'extractjs' : ['auto', 'always', 'never']
         };
 
     flags.forEach(function (option) {
@@ -65,6 +67,13 @@ var maybeExit = (function () {
     };
 }());
 
+function shouldExtractJS(path) {
+    'use strict';
+    var option = parsed.extractjs;
+    return option === 'auto' ?
+            /\.(html|htm)$/.test(path) :
+            option === 'always';
+}
 
 function lintFile(file) {
     'use strict';
@@ -79,6 +88,11 @@ function lintFile(file) {
         }
 
         data = data.toString("utf8");
+
+        if (shouldExtractJS(file)) {
+            data = extractjs(data);
+        }
+
         var lint = linter.lint(data, parsed);
 
         if (parsed.json) {
