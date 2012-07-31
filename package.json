@@ -16,7 +16,7 @@
     "Anders Conbere <aconbere@gmail.com>"
   ],
   "bin": {
-    "jslint": "./bin/jslint.js"
+    "jslint-extractor": "./bin/jslint.js"
   },
   "main": "./lib/jslint.js",
   "dependencies": {
