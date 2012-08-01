@@ -61,7 +61,7 @@ var maybeExit = (function () {
         filesLeft -= 1;
         ok = lint.ok && ok;
 
-        if (filesLeft === 0 || parsed.stop) {
+        if (filesLeft === 0 || (!ok && parsed.stop)) {
             // This was the last file.
             process.exit(ok ? 0 : 1);
         }
