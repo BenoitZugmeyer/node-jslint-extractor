@@ -78,6 +78,10 @@ function shouldExtractJS(path) {
 
 function lintFile(file) {
     'use strict';
+    var filearr = file.split(';'),
+        filealias = filearr[1] || filearr[0];
+    file = filearr[0];
+
     fs.readFile(file, function (err, data) {
         if (err) {
             throw err;
@@ -90,7 +94,7 @@ function lintFile(file) {
 
         data = data.toString("utf8");
 
-        if (shouldExtractJS(file)) {
+        if (shouldExtractJS(filealias)) {
             data = extractjs(data);
         }
 
@@ -99,11 +103,10 @@ function lintFile(file) {
         if (parsed.json) {
             console.log(JSON.stringify([file, lint.errors]));
         } else {
-            reporter.report(file, lint, parsed.color, parsed.terse);
+            reporter.report(filealias, lint, parsed.color, parsed.terse);
         }
 
         maybeExit(lint);
     });
 }
-
 parsed.argv.remain.forEach(lintFile);
