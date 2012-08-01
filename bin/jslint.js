@@ -14,7 +14,8 @@ function commandOptions() {
             'newcap', 'node', 'nomen', 'on', 'passfail', 'plusplus',
             'properties', 'regexp', 'rhino', 'undef', 'unparam',
             'sloppy', 'stupid', 'sub', 'todo', 'vars', 'white', 'widget', 'windows',
-            'json', 'color', 'terse'
+            'json', 'color', 'terse',
+            'stop'
         ],
         commandOpts = {
             'indent' : Number,
@@ -60,7 +61,7 @@ var maybeExit = (function () {
         filesLeft -= 1;
         ok = lint.ok && ok;
 
-        if (filesLeft === 0) {
+        if (filesLeft === 0 || parsed.stop) {
             // This was the last file.
             process.exit(ok ? 0 : 1);
         }
