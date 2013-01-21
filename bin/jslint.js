@@ -72,7 +72,7 @@ function shouldExtractJS(path) {
     'use strict';
     var option = parsed.extractjs;
     return option === 'auto' ?
-            /\.(html|htm)$/.test(path) :
+            /\.(html|htm|xhtml)$/.test(path) :
             option === 'always';
 }
 
